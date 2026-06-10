@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!--***Reporte de cambios:***
+rubrica2.1_v1.3
+-reestructuracion de archivos y carpetas total
+-actualizacion de imagenes y recursos
+-barra lateral e iconos
+-apartado de comentarios simulado con JS
+-estilo mas suave y pastel y disenio glass
+-funciones con JS de carrusel y comentarios corregidos
+-estilos globales nuevos de CSS para formularios
+-->
+
+<!--***Cambios proximos:***(_v1.4)
+-integrar un servicio de comunicacion (red social, correo o num telefonico) insta y twiter
+-integracion de link a pagina ejemplo(corredoras.html) con buscador integrado
+-integracion de fichas de umas independientes en buscar_uma.html
+-Correccion de erroresmenores y optimizacion de codigo
+-Linkeo de archivos aniadidos
+-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UMAPEDIA | RIBRICA 1.3</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+    <!-- DIV DE FONDO FIJO -->
+    <div class="background-fixed"></div>
+
+    <!-- BARRA SUPERIOR FIJA (logo + título + íconos) -->
+    <div class="top-bar-fixed">
+        <!-- Logo -->
+        <!-- [FIX v1.3] Eliminada etiqueta </a> huérfana que no tenía apertura -->
+        <div class="persistent-logo">
+            <img src="/recursos/logo.png" alt="Logo Umopedia">
+        </div>
+
+        <!-- Título -->
+        <div class="persistent-title">
+            <span class="title-text">UMAPEDIA</span>
+        </div>
+
+        <!-- Íconos de navegación -->
+        <div class="nav-icons">
+            <a href="#personajes" class="nav-icon" data-section="personajes">
+                <span class="icon">👤</span>
+                <span class="icon-label">Personajes</span>
+            </a>
+            <a href="#noticias" class="nav-icon" data-section="noticias">
+                <span class="icon">📝</span>
+                <span class="icon-label">Noticias</span>
+            </a>
+            <!--Boton buscar para acceso directo-->
+            <a href="buscar_uma.html" class="nav-icon" data-section="buscar">
+                <span class="icon">🔍</span>
+                <span class="icon-label">Buscar</span>
+            </a>
+
+            <!-- [FIX v1.3] Corregida ruta de ../foro.html a foro.html (mismo directorio) -->
+            <a href="foro.html" class="nav-icon" data-section="foro">
+                <span class="icon">✏️</span>
+                <span class="icon-label">Foro</span>
+            </a>
+            
+        </div>
+    </div>
+
+    <!-- SECCIÓN HÉROE (INICIO) -->
+    <section id="inicio" class="hero-section glass">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Bienvenido a la <span class="highlight">Umapedia</span></h1>
+                <p>Centro de datos donde podras saber sobre las vidas tanto dentro del anime como la realidad de la historia de estas grandes extrellas del derby japones tal como sucedieron los hechos y como cygames lo adapto en sus diferentes adaptaciones como anime, manga y el videojuego en español.</p>
+                <a href="#personajes" class="btn-primary">Explorar Estrellas Del Derby</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN GUÍA: tres tarjetas informativas -->
+    <section id="guia" class="info-guide">
+        <div class="guide-grid">
+            <div class="guide-item glass">
+                <div class="icon-wrapper">
+                    <img src="/recursos/icono.jpg" alt="Fichas" class="guide-img">
+                </div>
+                <h3>Fichas Técnicas</h3>
+                <p>Datos precisos sobre datos historicos de los caballos IRL y sus adaptaciones dentro de umamusume.</p>
+            </div>
+            <div class="guide-item glass">
+                <div class="icon-wrapper">
+                    <img src="/recursos/still.png" alt="Noticias" class="guide-img">
+                </div>
+                <h3>Noticias</h3>
+                <p>Mantente al día con los eventos de la versión global y nuevos lanzamientos.</p>
+            </div>
+            <div class="guide-item glass">
+                <div class="icon-wrapper">
+                    <img src="/recursos/icono2.jpg" alt="Galería" class="guide-img">
+                </div>
+                <h3>Galería Viva</h3>
+                <p>Diseños detallados y arte oficial de tus corredoras favoritas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ESTRUCTURA PRINCIPAL (contenido centrado) -->
+    <div class="main-layout">
+        <div class="content-area-full">
+            
+            <!-- SLIDER BOX: Carrusel de noticias -->
+            <div class="slider-box glass" id="noticias">
+                <input type="radio" name="slide" id="s1" checked>
+                <input type="radio" name="slide" id="s2">
+                <input type="radio" name="slide" id="s3">
+
+                <div class="slides">
+                    <div class="slide st1">
+                        <img src="/recursos/noticia 1.jpg" alt="Noticia 1">
+                        <div class="caption"><h2>Nueva Película: Una Nueva Era</h2></div>
+                    </div>
+                    <div class="slide st2">
+                        <img src="/recursos/noticia 2.jpg" alt="Noticia 2">
+                        <div class="caption"><h2>Evento: Trackblazer</h2></div>
+                    </div>
+                    <div class="slide st3">
+                        <img src="/recursos/noticia 3.jpg" alt="Noticia 3">
+                        <div class="caption"><h2>1er Aniversario Global</h2></div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <label for="s1"></label>
+                    <label for="s2"></label>
+                    <label for="s3"></label>
+                </div>
+            </div>
+
+            <!-- SECCIÓN BASE DE DATOS DE PERSONAJES -->
+            <section id="personajes" class="character-database">
+                <div class="glass-main main-table-container">
+                    
+                    <div class="table-header">
+                        <h2 class="title-serif">★ Registro de Corredoras ★</h2>
+                        <div class="nav-controls">
+                            <a href="buscar_uma.html" class="nav-arrow">Ver más ➕</a><!---Direccionamiento sin definiicon en esta version-->
+                        </div>
+                    </div>
+
+                    <div class="uma-carousel-window">
+                        <!-- GRUPO 1 -->
+                        <div class="uma-group" id="grupo1">
+                            <!-- TARJETA GOLD SHIP -->
+                            <div class="uma-card-tech">
+                                <div class="card-image"><img src="/recursos/golship.png" alt="Gold Ship"></div>
+                                <div class="card-content">
+                                    <h3>Gold Ship</h3>
+                                    <table class="mini-data">
+                                        <tr><td>Estrategia:</td><td class="val-chaser">Chaser</td></tr>
+                                        <tr><td>Pista:</td><td>Césped / Media</td></tr>
+                                        <tr><td>Rareza:</td><td>⭐⭐⭐</td></tr>
+                                    </table>
+                                    <a href="ficha_gold_ship.html" class="btn-view">Ver Detalles</a>
+                                </div>
+                            </div>
+
+                            <!-- TARJETA SPECIAL WEEK -->
+                            <div class="uma-card-tech">
+                                <div class="card-image"><img src="/recursos/specialweek.png" alt="spe"></div>
+                                <div class="card-content">
+                                    <h3>Special Week</h3>
+                                    <table class="mini-data">
+                                        <tr><td>Estrategia:</td><td class="val-leader">Leader</td></tr>
+                                        <tr><td>Pista:</td><td>Césped / Larga</td></tr>
+                                        <tr><td>Rareza:</td><td>⭐⭐⭐</td></tr>
+                                    </table>
+                                    <a href="ficha_special_week.html" class="btn-view">Ver Detalles</a>
+                                </div>
+                            </div>
+
+                            <!-- TARJETA SILENCE SUZUKA -->
+                            <div class="uma-card-tech">
+                                <div class="card-image"><img src="/recursos/suzuka.png" alt="suzuka"></div>
+                                <div class="card-content">
+                                    <h3>Silence Suzuka</h3>
+                                    <table class="mini-data">
+                                        <tr><td>Estrategia:</td><td class="val-runner">Runner</td></tr>
+                                        <tr><td>Pista:</td><td>Césped / Media</td></tr>
+                                        <tr><td>Rareza:</td><td>⭐⭐⭐</td></tr>
+                                    </table>
+                                    <a href="ficha_silence_suzuka.html" class="btn-view">Ver Detalles</a>
+                                </div>
+                            </div>
+
+                            <!-- TARJETA TOKAI TEIO -->
+                            <div class="uma-card-tech">
+                                <div class="card-image"><img src="/recursos/teio.png" alt="teio"></div>
+                                <div class="card-content">
+                                    <h3>Tokai Teio</h3>
+                                    <table class="mini-data">
+                                        <tr><td>Estrategia:</td><td class="val-leader">Leader</td></tr>
+                                        <tr><td>Pista:</td><td>Césped / Media</td></tr>
+                                        <tr><td>Rareza:</td><td>⭐⭐⭐</td></tr>
+                                    </table>
+                                    <a href="ficha_tokai_teio.html" class="btn-view">Ver Detalles</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- GRUPO 2 -->
+                        <div class="uma-group" id="grupo2">
+                            <!-- TARJETA MEJIRO MCQUEEN -->
+                            <div class="uma-card-tech">
+                                <div class="card-image"><img src="/recursos/mcqueen.png" alt="McQueen"></div>
+                                <div class="card-content">
+                                    <h3>Mejiro McQueen</h3>
+                                    <table class="mini-data">
+                                        <tr><td>Estrategia:</td><td class="val-leader">Leader</td></tr>
+                                        <tr><td>Pista:</td><td>Césped / Larga</td></tr>
+                                        <tr><td>Rareza:</td><td>⭐⭐⭐</td></tr>
+                                    </table>
+                                    <a href="ficha_mejiro.html" class="btn-view">Ver Detalles</a>
+                                </div>
+                            </div>
+
+                            <!-- TARJETA DAIWA SCARLET -->
+                            <div class="uma-card-tech">
+                                <div class="card-image"><img src="/recursos/daiwa.png" alt="daiwa"></div>
+                                <div class="card-content">
+                                    <h3>Daiwa Scarlet</h3>
+                                    <table class="mini-data">
+                                        <tr><td>Estrategia:</td><td class="val-runner">Runner</td></tr>
+                                        <tr><td>Pista:</td><td>Césped / Media</td></tr>
+                                        <tr><td>Rareza:</td><td>⭐⭐</td></tr>
+                                    </table>
+                                    <a href="ficha_scarlet.html" class="btn-view">Ver Detalles</a>
+                                </div>
+                            </div>
+
+                            <!-- TARJETA VODKA -->
+                            <div class="uma-card-tech">
+                                <div class="card-image"><img src="/recursos/vodka.png" alt="vodka"></div>
+                                <div class="card-content">
+                                    <h3>Vodka</h3>
+                                    <table class="mini-data">
+                                        <tr><td>Estrategia:</td><td class="val-betweener">Betweener</td></tr>
+                                        <tr><td>Pista:</td><td>Césped / Media</td></tr>
+                                        <tr><td>Rareza:</td><td>⭐⭐</td></tr>
+                                    </table>
+                                    <a href="ficha_vodka.html" class="btn-view">Ver Detalles</a>
+                                </div>
+                            </div>
+
+                            <!-- TARJETA RICE SHOWER -->
+                            <div class="uma-card-tech">
+                                <div class="card-image"><img src="/recursos/rice.png" alt="rice"></div>
+                                <div class="card-content">
+                                    <h3>Rice Shower</h3>
+                                    <table class="mini-data">
+                                        <tr><td>Estrategia:</td><td class="val-betweener">Betweener</td></tr>
+                                        <tr><td>Pista:</td><td>Césped / Larga</td></tr>
+                                        <tr><td>Rareza:</td><td>⭐⭐⭐</td></tr>
+                                    </table>
+                                    <a href="ficha_rice.html" class="btn-view">Ver Detalles</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Sección de foro movida a foro.html -->
+
+    <!-- SECCIÓN COLABORADORES -->
+    <section id="colaboradores" class="collab-section">
+        <div class="section-container glass">
+            <h2 class="title-serif"><span class="highlight">✦</span> Equipo de Desarrollo</h2>
+            <div class="collab-grid">
+                <div class="collab-card">
+                    <div class="collab-avatar">S</div>
+                    <h3>Said</h3>
+                    <p>programador principal</p>
+                </div>
+                <div class="collab-card">
+                    <div class="collab-avatar">L</div>
+                    <h3>Liss</h3>
+                    <p>diseñadora</p>
+                </div>
+                <div class="collab-card">
+                    <div class="collab-avatar">K</div>
+                    <h3>Kenya</h3>
+                    <p>analista (investigadora)</p>
+                </div>
+                <div class="collab-card">
+                    <div class="collab-avatar">J</div>
+                    <h3>Johan</h3>
+                    <p>programador secundario</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="main-footer glass">
+        <div class="footer-content">
+            <p>&copy; Cygames - Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/1LqQZFm9xr/" class="social-icon">Facebook</a>
+                <a href="#" class="social-icon">Twitter / X</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/carruselscript.js"></script>
+    <!-- [FIX v1.3] Eliminado comentarios.js de index: el foro fue movido a foro.html -->
+</body>
+</html>

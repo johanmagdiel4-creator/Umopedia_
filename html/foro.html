@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMAPEDIA | Foro de la Comunidad</title>
+    <!-- [FIX v1.3] Corregida ruta del CSS de ../css/estilos.css a /css/estilos.css -->
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+
+    <!-- DIV DE FONDO FIJO (necesario para el estilo glass) -->
+    <div class="background-fixed"></div>
+
+    <!-- BARRA SUPERIOR FIJA -->
+    <div class="top-bar-fixed">
+        <!-- [FIX v1.3] Corregida ruta del logo: de ../recursos/ a /recursos/ -->
+        <a href="index.html" class="logo-link">
+            <div class="persistent-logo">
+                <img src="/recursos/logo.png" alt="Logo Umopedia">
+            </div>
+        </a>
+
+        <!-- Título -->
+        <div class="persistent-title">
+            <span class="title-text">UMAPEDIA</span>
+        </div>
+
+        <div class="nav-icons">
+            <a href="buscar_uma.html" class="nav-icon" data-section="buscar">
+                <span class="icon">🔍</span>
+                <span class="icon-label">Buscar</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- SECCIÓN DE COMENTARIOS / FORO -->
+    <section id="comentarios" class="comments-section">
+        <div class="section-container glass">
+            <h2 class="title-serif"><span class="highlight">✦</span> Comunidad Tracen</h2>
+            <p class="section-subtitle">Comparte tus estrategias o saluda a otros entrenadores.</p>
+
+            <!-- FORMULARIO DE COMENTARIO -->
+            <form id="commentForm" class="comment-form">
+                <div class="form-group">
+                    <input type="text" id="commentName" placeholder="Escribe tu nombre de Entrenador..." class="comment-input" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="commentMessage" placeholder="Escribe tu comentario aquí..." class="comment-area" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Publicar Comentario</button>
+            </form>
+
+            <hr class="divider">
+
+            <!-- LISTA DE COMENTARIOS -->
+            <div id="commentsList" class="comments-list">
+                <!-- Los comentarios aparecerán aquí dinámicamente -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SCRIPTS -->
+    <!-- [FIX v1.3] Corregida ruta del script de ../js/ a /js/ -->
+    <script src="/js/comentarios.js"></script>
+</body>
+</html>

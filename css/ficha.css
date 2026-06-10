@@ -1,0 +1,195 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:#8b88ec;
+    color:#333;
+    min-height:100vh;
+}
+
+/* Fondo */
+
+.background-fixed{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+    background: 
+        linear-gradient(135deg, rgba(137, 172, 226, 0.92), rgba(53, 85, 226, 0.686)),
+        url('/recursos/fondo.jpg') center/cover;
+    z-index: -2;
+
+    filter:blur(3px);
+    z-index:-2;
+}
+
+.background-fixed::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(170,180,255,.45);
+}
+
+/* Logo */
+
+.persistent-logo{
+    position:fixed;
+    top:15px;
+    left:15px;
+    z-index:100;
+}
+
+.persistent-logo img{
+    width:80px;
+    transition:.3s;
+}
+
+.persistent-logo img:hover{
+    transform:scale(1.08);
+}
+
+/* Contenedor */
+
+.page-container{
+
+    width:95%;
+    max-width:1600px;
+
+    margin:30px auto;
+
+    background:rgba(255,255,255,.85);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:25px;
+
+    padding:30px;
+}
+
+/* Encabezado */
+
+.character-header{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.character-header h1{
+    font-size:3rem;
+    color:#33456b;
+}
+
+.japanese-name{
+    margin-top:8px;
+    font-size:1.3rem;
+    color:#555;
+}
+
+.slogan{
+    margin-top:10px;
+    font-style:italic;
+    color:#666;
+}
+
+/* Grid */
+
+.content-grid{
+    display:grid;
+    grid-template-columns:280px 1fr;
+    gap:20px;
+}
+
+/* Tarjeta izquierda */
+
+.left-card img{
+    width:100%;
+    border-radius:15px;
+}
+
+.attr-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:10px;
+}
+
+.attr-table td{
+    border:1px solid #bbb;
+    padding:10px;
+    background:#efedf4;
+}
+
+/* Parte derecha */
+
+.info-block{
+    margin-bottom:20px;
+    line-height:1.7;
+}
+
+/* Habilidades */
+
+.skills-grid{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-bottom:25px;
+}
+
+.skill-card{
+    background:#dcd4dc;
+    padding:16px;
+    border-radius:12px;
+}
+
+.skill-card strong{
+    display:block;
+}
+
+.skill-card span{
+    font-size:.9rem;
+    color:#555;
+}
+
+/* Títulos */
+
+.section-title{
+    margin:20px 0 10px;
+    color:#333;
+}
+
+/* Tablas */
+
+.data-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-bottom:25px;
+}
+
+.data-table th,
+.data-table td{
+    border:1px solid #bbb;
+    padding:12px;
+}
+
+.data-table th{
+    background:#eceaf0;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+    .content-grid{
+        grid-template-columns:1fr;
+    }
+
+    .left-card{
+        max-width:350px;
+        margin:auto;
+    }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- [v1.3] buscar_uma.html — rediseñado con estilos unificados (estilos.css) -->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UMAPEDIA | Buscar Corredoras</title>
+    <!-- [v1.3] Reemplazado style.css por estilos.css del proyecto principal -->
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+
+    <!-- Fondo fijo (igual que index.html y foro.html) -->
+    <!-- [v1.3] Reemplazado <div class="fondo"> por background-fixed -->
+    <div class="background-fixed"></div>
+
+    <!-- BARRA SUPERIOR FIJA -->
+    <!-- [v1.3] Reemplazado <header class="navbar"> por top-bar-fixed -->
+    <div class="top-bar-fixed">
+        <a href="index.html">
+            <div class="persistent-logo">
+                <img src="/recursos/logo.png" alt="Logo Umapedia">
+            </div>
+        </a>
+
+        <div class="persistent-title">
+            <span class="title-text">UMAPEDIA</span>
+        </div>
+
+        <div class="nav-icons">
+
+            <a href="foro.html" class="nav-icon" data-section="foro">
+                <span class="icon">✏️</span>
+                <span class="icon-label">Foro</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="main-layout" style="margin-top: 100px;">
+        <div class="content-area-full">
+            <div class="main-table-container">
+
+                <div class="table-header">
+                    <h2 class="title-serif">★ Registro de Corredoras ★</h2>
+                    <!-- [v1.3] Buscador integrado en la cabecera de la tabla -->
+                    <input
+                        type="text"
+                        id="buscador"
+                        placeholder="🔍 Buscar corredora..."
+                        class="search-input"
+                    >
+                </div>
+
+                <!-- [v1.3] Contenedor con nueva clase uma-search-grid (ver estilos.css) -->
+                <div id="contenedor-umas" class="uma-search-grid">
+                    <!-- Generado dinámicamente por script_buscar.js -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- [v1.3] Ruta corregida de script.js a /js/script_buscar.js -->
+    <script src="/js/script_buscar.js"></script>
+
+</body>
+</html>
